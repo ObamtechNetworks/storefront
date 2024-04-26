@@ -26,8 +26,9 @@ class Product(models.Model):
     # can be used as prkmary key: sku = models.CharField(max_length=10, primary_key=True)
     title = models.CharField(max_length=255)
     description = models.TextField()
+    slug = models.SlugField()
     # 9999.99
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    unit_price = models.DecimalField(max_digits=6, decimal_places=2)
     inventory = models.IntegerField()
     last_update = models.DateTimeField(auto_now=True)
     collection = models.ForeignKey(Collection,

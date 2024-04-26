@@ -8,6 +8,6 @@ class  LikedItem(models.Model):
     """model what user liked what item"""
     # if a user is deleted, all objects that the user has liked too is deleted
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    content_type = models.ForeignKey(ContentType, on_delete=CASCADE)
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
-    content_object = models.GenericForeignKey()
+    content_object = GenericForeignKey()
